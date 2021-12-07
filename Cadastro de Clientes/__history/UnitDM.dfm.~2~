@@ -1,0 +1,80 @@
+﻿object DM: TDM
+  OldCreateOrder = False
+  Height = 378
+  Width = 529
+  object conexao: TFDConnection
+    Params.Strings = (
+      'Database=dados'
+      'User_Name=root'
+      'DriverID=MySQL')
+    Connected = True
+    LoginPrompt = False
+    Left = 120
+    Top = 88
+  end
+  object tbClientes: TFDTable
+    Active = True
+    IndexFieldNames = 'id'
+    Connection = conexao
+    TableName = 'dados.cadastro'
+    Left = 256
+    Top = 128
+    object tbClientesid: TFDAutoIncField
+      FieldName = 'id'
+      Origin = 'id'
+    end
+    object tbClientesNome: TStringField
+      FieldName = 'Nome'
+      Origin = 'Nome'
+      Required = True
+      Size = 50
+    end
+    object tbClientesTelefone: TStringField
+      FieldName = 'Telefone'
+      Origin = 'Telefone'
+      Required = True
+      Size = 16
+    end
+    object tbClientesEndereço: TStringField
+      FieldName = 'Endere'#231'o'
+      Origin = '`Endere'#231'o`'
+      Required = True
+      Size = 50
+    end
+    object tbClientesEmail: TStringField
+      FieldName = 'Email'
+      Origin = 'Email'
+      Required = True
+      Size = 50
+    end
+    object tbClientescpf: TStringField
+      FieldName = 'cpf'
+      Origin = 'cpf'
+      Required = True
+      Size = 15
+    end
+    object tbClientescep: TStringField
+      FieldName = 'cep'
+      Origin = 'cep'
+      Required = True
+      Size = 15
+    end
+    object tbClientesbairro: TStringField
+      FieldName = 'bairro'
+      Origin = 'bairro'
+      Required = True
+      Size = 50
+    end
+    object tbClientesobeservacoes: TMemoField
+      FieldName = 'obeservacoes'
+      Origin = 'obeservacoes'
+      Required = True
+      BlobType = ftMemo
+    end
+  end
+  object dsClientes: TDataSource
+    DataSet = tbClientes
+    Left = 160
+    Top = 224
+  end
+end
